@@ -1,0 +1,4 @@
+build
+*.o
+*.od
+*.or

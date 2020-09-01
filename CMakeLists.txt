@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(minisat_utiles)
+file(GLOB_RECURSE  SOURCES *.cc)
+add_library(minisat_utiles  "${SOURCES}")
+target_include_directories(minisat_utiles PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
