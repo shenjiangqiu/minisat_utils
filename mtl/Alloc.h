@@ -74,7 +74,7 @@ namespace Minisat
             Unit_Size = sizeof(uint32_t)
         };
         template <typename Archive>
-        void save(Archive &ar, const unsigned int version) const
+        void save(Archive &ar, const unsigned int ) const
         {
             ar &sz;
             for (unsigned i = 0; i < sz; i++)
@@ -83,7 +83,7 @@ namespace Minisat
             }
         }
         template <typename Archive>
-        void load(Archive &ar, const unsigned int version)
+        void load(Archive &ar, const unsigned int )
         {
             ar &sz;
             capacity(sz);
