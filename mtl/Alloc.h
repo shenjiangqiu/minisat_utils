@@ -74,7 +74,7 @@ namespace Minisat
             Unit_Size = sizeof(uint32_t)
         };
         template <typename Archive>
-        void save(Archive &ar, const unsigned int ) const
+        void save(Archive &ar, const unsigned int) const
         {
             ar &sz;
             for (unsigned i = 0; i < sz; i++)
@@ -83,7 +83,7 @@ namespace Minisat
             }
         }
         template <typename Archive>
-        void load(Archive &ar, const unsigned int )
+        void load(Archive &ar, const unsigned int)
         {
             ar &sz;
             capacity(sz);
@@ -110,23 +110,23 @@ namespace Minisat
         // Deref, Load Effective Address (LEA), Inverse of LEA (AEL):
         T &operator[](Ref r)
         {
-            assert(r >= 0 && r < sz);
+            assert(r < sz);
             return memory[r];
         }
         const T &operator[](Ref r) const
         {
-            assert(r >= 0 && r < sz);
+            assert(r < sz);
             return memory[r];
         }
 
         T *lea(Ref r)
         {
-            assert(r >= 0 && r < sz);
+            assert(r < sz);
             return &memory[r];
         }
         const T *lea(Ref r) const
         {
-            assert(r >= 0 && r < sz);
+            assert(r < sz);
             return &memory[r];
         }
         Ref ael(const T *t)
