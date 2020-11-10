@@ -46,12 +46,12 @@ namespace Minisat
         int cap;
 
         // Don't allow copying (error prone):
-        vec<T> &operator=(vec<T> &other)
+        vec<T> &operator=(vec<T> &)
         {
             assert(0);
             return *this;
         }
-        vec(vec<T> &other) { assert(0); }
+        vec(vec<T> &) { assert(0); }
 
         // Helpers for calculating next capacity:
         static inline int imax(int x, int y)
