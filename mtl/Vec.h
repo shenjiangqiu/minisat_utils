@@ -221,12 +221,11 @@ namespace Minisat
         if (cap >= min_cap)
             return;
         int add = imax((min_cap - cap + 1) & ~1, ((cap >> 1) + 2) & ~1); // NOTE: grow by approximately 3/2
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wclass-memaccess"
+
         if (add > INT_MAX - cap || (((data = (T *)::realloc(data, (cap += add) * sizeof(T))) == NULL) && errno == ENOMEM))
             throw OutOfMemoryException();
 
-#pragma GCC diagnostic pop
+
     }
 
     template <class T>
